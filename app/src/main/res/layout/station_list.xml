@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false">
+
+        <requestFocus />
+    </SearchView>
+
+    <ListView
+        android:id="@+id/station_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/search" />
+
+   <Button
+       android:layout_alignRight="@id/station_list"
+       android:text="SYNC"
+       android:onClick="sync"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+
+   </Button>
+
+</RelativeLayout>

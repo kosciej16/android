@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="bikenumber">bikeNumber</string>
+    <string name="ringnumber">ringNumber</string>
+    <string name="app_label">jakislabel</string>
+    <string name="search_hint">search bike</string>
+</resources>
