@@ -8,11 +8,14 @@ interface BikeDAO {
     @Query("SELECT * FROM bike")
     fun getAll(): List<Bike>
 
+    @Query("SELECT * FROM bike where bikeId = :bikeId")
+    fun getById(bikeId: Int): Bike
+
     @Insert
     fun insertAll(vararg bikes: Bike)
 
-    @Update
-    fun updateUsers(vararg bikes: Bike)
+    @Query("UPDATE bike SET ring= :ring WHERE bikeId = :bikeId")
+    fun updateBikeRing(bikeId: Int, ring: Int)
 
     @Query("SELECT * FROM bike WHERE stationId=:stationId")
     fun findBikesForStation(stationId: Int) : List<Bike>

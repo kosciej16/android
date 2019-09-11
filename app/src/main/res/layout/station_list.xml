@@ -18,6 +18,7 @@
         android:layout_below="@+id/search" />
 
    <Button
+       android:id="@+id/sync"
        android:layout_alignRight="@id/station_list"
        android:text="SYNC"
        android:onClick="sync"
@@ -25,5 +26,13 @@
        android:layout_height="wrap_content">
 
    </Button>
+    <Button
+        android:layout_alignLeft="@id/station_list"
+        android:text="ADD RING"
+        android:onClick="addRingNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </Button>
 
 </RelativeLayout>

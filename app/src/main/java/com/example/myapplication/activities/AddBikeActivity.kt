@@ -2,10 +2,14 @@ package com.example.myapplication.activities
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
+import com.example.myapplication.AppDatabase
 import com.example.myapplication.R
+import com.example.myapplication.models.Bike
 
 class AddBikeActivity : AppCompatActivity() {
 
@@ -17,12 +21,10 @@ class AddBikeActivity : AppCompatActivity() {
     fun addRingNumber(view : View) {
         val bike = findViewById<EditText>(R.id.bikeNumber).editableText.toString()
         val ring = findViewById<EditText>(R.id.ringNumber).editableText.toString()
-        val prefs = this.getSharedPreferences("bikes",Context.MODE_PRIVATE)
-        val editor = prefs.edit()
-        editor.putString(bike, ring)
-        editor.apply()
-        finish()
-
+        val db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, "database-name"
+        ).allowMainThreadQueries().build()
+        db.BikeDAO().updateBikeRing(bike.toInt(), ring.toInt())
     }
-
 }
